@@ -6,7 +6,7 @@
 /*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 12:59:48 by haitaabe          #+#    #+#             */
-/*   Updated: 2026/04/06 18:33:31 by haitaabe         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:09:41 by haitaabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Channel
         std::map<int, client*> _operators;
 
     public:
-        Channel(std::string name); // Constructor
-        ~Channel();                // Destructor
+        Channel(std::string name);
+        ~Channel();
 
         void addMember(client* user);
         void removeMember(int fd);
