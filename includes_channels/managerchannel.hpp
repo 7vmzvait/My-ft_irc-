@@ -6,7 +6,7 @@
 /*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 11:04:57 by haitaabe          #+#    #+#             */
-/*   Updated: 2026/04/09 11:09:24 by haitaabe         ###   ########.fr       */
+/*   Updated: 2026/04/09 17:31:41 by haitaabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,31 @@
 
 #include <map>
 #include <string>
+#include <vector>
 #include "channel.hpp"
+
+struct client; 
 
 class managerchannel 
 {
     private:
+        std::map<int, client> &_clients;
+        std::string _serverPassword;
+
         std::map<std::string, Channel*> _allChannels;
 
     public:
-        managerchannel();
+        managerchannel(std::map<int, client> &clients, const std::string &pass);
         ~managerchannel();
 
-        void handleJoin(client* user, std::string channelName);
+        void handle_input(const std::string &input, client &c);
 
-        // void handlePart(client* user, std::string channelName);
-        // void handlePrivmsg(client* user, std::string target, std::string message);
+        void handlePass(client *c, const std::string &password);
+        void handleNick(client *c, const std::string &nickname);
+        void handleUser(client *c, const std::vector<std::string> &args);
+        void checkRegistrationComplete(client *c);
+        void handleJoin(client* c, std::string channelName);
+        
 };
 
 #endif
