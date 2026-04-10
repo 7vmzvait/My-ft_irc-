@@ -7,9 +7,9 @@ managerchannel::managerchannel(std::map<int, client> &clients,const std::string 
 {
 }
 
-void managerchannel::handle_input(const std::string &input, client &c)
-{
-    this->auth.tryRegister(c,input);
-    if (input.compare(0,5,"PRINT") == 0)
-        Utils::printClientsInfo(_clients);
-}
+// void managerchannel::handle_input(const std::string &input, client &c)
+// {
+//     this->auth.tryRegister(c,input);
+//     if (input.compare(0,5,"PRINT") == 0)
+//         Utils::printClientsInfo(_clients);
+// }

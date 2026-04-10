@@ -6,7 +6,7 @@
 /*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:09:01 by eazmir            #+#    #+#             */
-/*   Updated: 2026/04/06 13:18:48 by haitaabe         ###   ########.fr       */
+/*   Updated: 2026/04/10 21:13:34 by haitaabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@
 #include <fcntl.h>
 #include <map>
 #include <set>
+#include "../includes_channels/managerchannel.hpp"
 
 ///////////////////////////////////////////////////////////
 // Forward declaration
-class managerchannel;
 class authentication;
+class managerchannel;
 ///////////////////////////////////////////////////////////
 #define BUFFER_SIZE 1024
 #define MAX_CLIENT 1000
