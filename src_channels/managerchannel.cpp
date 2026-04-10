@@ -6,7 +6,7 @@
 /*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 16:38:58 by haitaabe          #+#    #+#             */
-/*   Updated: 2026/04/10 14:56:34 by haitaabe         ###   ########.fr       */
+/*   Updated: 2026/04/10 18:55:46 by haitaabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <sstream>
 #include <vector>
 #include <iostream>
+
 
 
 void managerchannel::handle_input(const std::string &input, client &c)
@@ -60,4 +61,28 @@ void managerchannel::handlePass(client *c, const std::string &password)
     {
         c->pass_ok = false;
     }
+}
+
+void managerchannel::handleNick(client *c, const std::string &nickname)
+{
+    if (c->regestred)
+    {
+        std::cout << "Error: User already registered!" << std::endl;
+        return ;
+    }
+
+    
+    std::map<int, client>::iterator it;
+    
+    for (it = _clients.begin(); it != _clients.end(); ++it)
+    {
+        if (it->second.nickname == nickname)
+        {
+            std::cout << "You cannot use this name, it used , GOTTA CHANGE IT!" << std::endl;
+            return ;   
+        }
+    }
+    
+    c->nickname = nickname;
+    c->nick_ok = true;
 }
