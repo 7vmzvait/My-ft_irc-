@@ -6,7 +6,7 @@
 /*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 16:38:58 by haitaabe          #+#    #+#             */
-/*   Updated: 2026/04/10 18:55:46 by haitaabe         ###   ########.fr       */
+/*   Updated: 2026/04/10 19:41:09 by haitaabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,20 @@ void managerchannel::handleNick(client *c, const std::string &nickname)
     
     c->nickname = nickname;
     c->nick_ok = true;
+}
+
+
+void managerchannel::handleUser(client *c, const std::vector<std::string> &tokens)
+{
+    if (c->regestred)
+    {
+        std::cout << "Error: User already registered!" << std::endl;
+        return;
+    }
+
+    if (tokens.size() < 5)
+    {
+        std::cout << "Not enough info!" << std::endl;
+        return;
+    }
 }
