@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   authentication.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 02:45:56 by eazmir            #+#    #+#             */
-/*   Updated: 2026/02/21 13:27:17 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/04/11 18:38:53 by haitaabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class authentication
 {
     private:
         std::string _serverPassword;
+        
     public:
     authentication();
     authentication(std::string pass);
