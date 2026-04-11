@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitaabe <haitaabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:09:01 by eazmir            #+#    #+#             */
-/*   Updated: 2026/04/10 21:13:34 by haitaabe         ###   ########.fr       */
+/*   Updated: 2026/02/21 04:12:35 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@
 #include <fcntl.h>
 #include <map>
 #include <set>
-#include "../includes_channels/managerchannel.hpp"
 
 ///////////////////////////////////////////////////////////
 // Forward declaration
-class authentication;
 class managerchannel;
+class authentication;
 ///////////////////////////////////////////////////////////
 #define BUFFER_SIZE 1024
 #define MAX_CLIENT 1000
@@ -65,7 +64,7 @@ class  server
         bool status;
         ///////////////////////////////////////////////////
         std::string _password;
-        std::map<int ,client> _clients;  
+        std::map<int ,client> _clients;
         ///////////////////////////////////////////////////
          managerchannel *channel;   
         struct sockaddr_in _addr;
